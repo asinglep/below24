@@ -114,7 +114,7 @@
 <section class="floor wardrobe">
 <div class="floor-no">B1 / 08:43</div>
 <div class="day-scale" aria-hidden="true"><span>DAY 01<br><b>LIPSTICK</b></span><i></i><span>DAY 07<br><b>CROCS</b></span></div>
-<div class="wardrobe-morph"><div><span>💄 POLISHED</span><b id="dressState">MAKE-UP INTACT</b><span>LIUXIANDONG WORKER 🩴</span></div><input id="dressSlider" type="range" min="0" max="100" value="12" aria-label="Slide from polished professional to Liuxiandong worker"><small>SLIDE TO ADAPT　→</small></div>
+<div class="wardrobe-morph"><div class="makeover-game" aria-hidden="true"><div class="mirror"><div class="hair"><i></i></div><div class="face"><i class="brow"></i><i class="eyes"></i><i class="blush"></i><i class="lip"></i></div><div class="shirt"><i></i><b>WORK</b></div><div class="crocs">🩴　🩴</div></div><div class="makeover-copy"><span>MAKE-UP REMOVAL</span><strong>SHENZHEN WORK MODE</strong><small>DRAG TO REMOVE MAKE-UP / CHANGE</small></div></div><div class="morph-labels"><span>💄 POLISHED</span><b id="dressState">MAKE-UP INTACT</b><span>LIUXIANDONG WORKER 🩴</span></div><input id="dressSlider" type="range" min="0" max="100" value="12" aria-label="Slide from polished professional to Liuxiandong worker"><small>SLIDE TO ADAPT　→</small></div>
 <div class="text">
 <h2>First, lipstick.<br>Then, <i>Crocs.</i>
 </h2>
@@ -183,18 +183,9 @@
 <div class="text">
 <h2>Hong Kong is<br>one checkpoint<br>away.</h2>
 <div class="body">
-<p>One weekend I went to Hong Kong. Across the border, I suddenly wanted to dress properly again. Young people looked clean, exercised, awake. Of course, comparing a Hong Kong weekend with a Shenzhen workday is cheating.</p>
-<div class="aside">On the way back, the checkpoint passed. The familiar exhaustion returned.</div>
-</div>
-</div>
-</section>
-<section class="floor paris">
-<div class="floor-no">MEMORY</div>
-<div class="text">
-<h2>Bonsoir.</h2>
-<div class="body">
-<p>Hong Kong made me think of Paris. Dusk on the way home. A neighbour saying bonsoir in the stairwell. I was free then, and Paris did not have to pay my salary.</p>
-<div class="aside">Paris was poetry and elsewhere. Shenzhen was going global and making money. I wanted both.</div>
+<p>One weekend I went to Hong Kong. Across the checkpoint, I suddenly wanted to put on make-up again. The polish had not disappeared. It was merely out of service on Shenzhen workdays.</p>
+<button type="button" class="customs-stamp"><span>STAMP TO CROSS</span><b>↓</b></button>
+<div class="stamp-mark" aria-hidden="true"><strong>CLEARED</strong><small>HONG KONG · 24H</small></div>
 </div>
 </div>
 </section>
@@ -225,7 +216,8 @@ const canvas=document.querySelector('#scratchCanvas'),wrap=document.querySelecto
 <script>document.querySelectorAll('.accept-order').forEach(button=>button.addEventListener('click',()=>{const card=button.closest('.order-card'),clock=card.querySelector('strong');card.classList.remove('accepted');void card.offsetWidth;card.classList.add('accepted');button.firstChild.textContent='ACCEPTED. NEW ORDER ';clock.textContent='04:59';setTimeout(()=>button.firstChild.textContent='ACCEPT ',1500)}));</script>
 <script>document.querySelector('.open-doors')?.addEventListener('click',()=>{document.querySelector('#trainDoors').classList.add('open');setTimeout(()=>{const sound=document.querySelector('#metroSound');if(sound?.getAttribute('aria-pressed')==='false')sound.click()},420)});</script>
 <script>document.querySelector('.answer-boss')?.addEventListener('click',e=>{const phone=e.currentTarget.closest('.boss-phone');phone.classList.toggle('answered');e.currentTarget.firstChild.textContent=phone.classList.contains('answered')?'HANG UP ':'ANSWER '});</script>
-<script>{const slider=document.querySelector('#dressSlider'),stage=document.querySelector('#dressState'),screen=document.querySelector('.wardrobe');slider?.addEventListener('input',()=>{const n=+slider.value;screen.style.setProperty('--dress',n+'%');stage.textContent=n<35?'MAKE-UP INTACT':n<70?'LIPSTICK OFFLINE':'CROCS EQUIPPED'})}</script>
+<script>{const slider=document.querySelector('#dressSlider'),stage=document.querySelector('#dressState'),screen=document.querySelector('.wardrobe');function dressUp(){const n=+slider.value;screen.style.setProperty('--dress',n+'%');screen.style.setProperty('--dress-n',n/100);stage.textContent=n<28?'MAKE-UP INTACT':n<55?'LIPSTICK OFFLINE':n<82?'BADGE TAKES OVER':'CROCS EQUIPPED';screen.classList.toggle('adapted',n>92)}slider?.addEventListener('input',dressUp);dressUp()}</script>
+<script>document.querySelector('.customs-stamp')?.addEventListener('click',e=>{const scene=e.currentTarget.closest('.border');scene.classList.remove('stamped');void scene.offsetWidth;scene.classList.add('stamped');e.currentTarget.querySelector('span').textContent='CLEARED'})</script>
 <style>
 @media(max-width:720px){
   .dispatch{min-height:100svh!important;padding:70px 6.5vw 18px!important;align-content:center!important}
@@ -273,6 +265,13 @@ function paintSilverTicket(){const r=wrap.getBoundingClientRect(),d=Math.min(dev
 <style>
 .metro-punchline{margin-top:8px!important;color:#b8ff32!important;font-family:"Courier New",Courier,monospace!important;font-size:clamp(15px,1.8vw,23px)!important;font-weight:700!important;line-height:1.55!important;letter-spacing:-.02em!important;transform:rotate(-.35deg)}
 @media(max-width:720px){.metro-punchline{margin-top:3px!important;font-size:16px!important;line-height:1.55!important}}
+</style>
+<style>
+.wardrobe{--dress-n:.12}.makeover-game{display:grid!important;grid-template-columns:150px 1fr!important;gap:18px!important;align-items:center!important;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed #111}.mirror{position:relative;width:150px;height:128px;border:2px solid #111;border-radius:72px 72px 18px 18px;background:linear-gradient(145deg,#d9f7ff,#fff);overflow:hidden;box-shadow:inset 7px 0 0 rgba(255,255,255,.7)}.face{position:absolute;z-index:2;left:45px;top:24px;width:62px;height:72px;border:2px solid #111;border-radius:46% 46% 48% 48%;background:#f2c5aa}.hair{position:absolute;z-index:3;left:36px;top:10px;width:78px;height:43px;border-radius:48px 48px 13px 13px;background:#2a211e;transform:rotate(calc(var(--dress-n)*5deg));transition:.15s}.hair:before,.hair:after{content:"";position:absolute;opacity:var(--dress-n);width:28px;height:8px;border-top:3px solid #2a211e;border-radius:50%;transition:.15s}.hair:before{left:-15px;top:21px;transform:rotate(-25deg)}.hair:after{right:-15px;top:16px;transform:rotate(25deg)}.hair i{position:absolute;right:-10px;top:-3px;width:25px;height:25px;border:2px solid #111;border-radius:50%;background:#2a211e;transform:scale(var(--dress-n));transition:.15s}.brow,.eyes,.blush,.lip{position:absolute;display:block}.brow{left:12px;top:24px;width:13px;height:5px;border-top:2px solid #33231d;border-radius:50%;box-shadow:27px 0 0 -1px #f2c5aa,27px 0 0 0 #33231d}.eyes{left:13px;top:32px;width:8px;height:5px;border-bottom:2px solid #111;border-radius:50%;box-shadow:28px 0 0 -1px #f2c5aa,28px 0 0 0 #111;transform:translateY(calc(var(--dress-n)*2px))}.blush{left:7px;top:43px;width:13px;height:7px;border-radius:50%;background:#ef7791;box-shadow:36px 0 #ef7791;opacity:calc(1 - var(--dress-n));transition:.15s}.lip{left:23px;bottom:10px;width:17px;height:8px;border-radius:50% 50% 55% 55%;background:#d92f5a;opacity:calc(1 - var(--dress-n));transform:scaleX(calc(1 - var(--dress-n)*.45));transition:.15s}.shirt{position:absolute;z-index:1;left:34px;bottom:-13px;width:84px;height:47px;border:2px solid #111;border-radius:20px 20px 0 0;background:color-mix(in srgb,#fff calc((1 - var(--dress-n))*100%),#8fbc55);transition:.15s}.shirt i{position:absolute;left:36px;top:-2px;width:13px;height:24px;border:2px solid #111;border-top:0;background:#f6df3c;opacity:var(--dress-n)}.shirt b{position:absolute;right:5px;top:14px;font:800 7px Arial,sans-serif;opacity:var(--dress-n)}.crocs{position:absolute;z-index:4;left:31px;bottom:3px;font-size:23px;letter-spacing:21px;opacity:var(--dress-n);transform:translateY(calc((1 - var(--dress-n))*24px)) scale(calc(.65 + var(--dress-n)*.35));transition:.15s}.makeover-copy{text-align:left}.makeover-copy span{display:block;font:8px Arial,sans-serif;letter-spacing:.18em}.makeover-copy strong{display:block;margin:7px 0;font:900 17px/1.1 Arial,sans-serif}.makeover-copy small{font:8px Arial,sans-serif;letter-spacing:.08em}.morph-labels{display:grid!important}.wardrobe.adapted .mirror{animation:mirrorPop .55s cubic-bezier(.2,1.6,.3,1)}.wardrobe.adapted .makeover-copy:after{content:"✦ ADAPTED ✦";display:block;margin-top:7px;color:#e54165;font:900 11px Arial,sans-serif;animation:giftBounce .55s both}@keyframes mirrorPop{50%{transform:scale(1.06) rotate(-2deg)}}
+@media(max-width:720px){.makeover-game{grid-template-columns:116px 1fr!important;gap:12px!important}.mirror{width:116px;height:108px}.face{left:34px;top:20px}.hair{left:25px;top:7px}.shirt{left:23px}.crocs{left:20px;bottom:1px}.makeover-copy strong{font-size:13px}.makeover-copy small{font-size:7px}.wardrobe-morph{padding:10px!important}.wardrobe-morph input{margin:10px 0 5px!important}}
+</style>
+<style>
+.border .body{position:relative;padding-bottom:86px!important}.customs-stamp{grid-column:1/-1;width:190px;min-height:54px;margin-top:8px;border:2px solid #ff554d;border-radius:7px;background:rgba(7,18,29,.72);color:#fff;font:800 10px Arial,sans-serif;letter-spacing:.12em;cursor:pointer;box-shadow:5px 5px 0 #ff554d;display:flex;align-items:center;justify-content:center;gap:18px}.customs-stamp b{font-size:24px;animation:cueDown 1s ease-in-out infinite}.stamp-mark{position:absolute;right:22px;bottom:18px;width:154px;height:66px;border:4px double #ef3e39;border-radius:50%;display:grid;place-content:center;text-align:center;color:#ef3e39;opacity:0;transform:translateY(-150px) rotate(-16deg) scale(1.35);filter:blur(1px);pointer-events:none}.stamp-mark strong{font:900 20px/1 Arial,sans-serif;letter-spacing:.12em}.stamp-mark small{margin-top:5px;font:800 8px Arial,sans-serif;letter-spacing:.18em}.border.stamped .stamp-mark{animation:stampDrop .62s cubic-bezier(.15,.86,.23,1.2) both}.border.stamped .hk-notes i{animation:cashFly 4.2s cubic-bezier(.18,.55,.25,1) var(--d) both!important}@keyframes stampDrop{0%{opacity:0;transform:translateY(-150px) rotate(-16deg) scale(1.35);filter:blur(2px)}58%{opacity:1;transform:translateY(6px) rotate(-9deg) scale(.92);filter:none}76%{transform:translateY(-5px) rotate(-10deg) scale(1.04)}100%{opacity:.92;transform:translateY(0) rotate(-10deg) scale(1);filter:none}}@media(max-width:720px){.border .body{padding-bottom:92px!important}.customs-stamp{width:165px;min-height:50px;font-size:9px}.stamp-mark{right:10px;bottom:18px;width:137px;height:59px}.stamp-mark strong{font-size:18px}}
 </style>
 </body>
 </html>

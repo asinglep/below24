@@ -110,7 +110,7 @@
 <section class="floor wardrobe">
 <div class="floor-no">B1 / 08:43</div>
 <div class="day-scale" aria-hidden="true"><span>DAY 01<br><b>口红</b></span><i></i><span>DAY 07<br><b>洞洞鞋</b></span></div>
-<div class="wardrobe-morph"><div><span>💄 精致白领</span><b id="dressState">妆发完整</b><span>留仙洞打工人 🩴</span></div><input id="dressSlider" type="range" min="0" max="100" value="12" aria-label="从精致白领滑向留仙洞打工人"><small>往右滑，完成适配　→</small></div>
+<div class="wardrobe-morph"><div class="makeover-game" aria-hidden="true"><div class="mirror"><div class="hair"><i></i></div><div class="face"><i class="brow"></i><i class="eyes"></i><i class="blush"></i><i class="lip"></i></div><div class="shirt"><i></i><b>WORK</b></div><div class="crocs">🩴　🩴</div></div><div class="makeover-copy"><span>MAKE-UP REMOVAL</span><strong>深圳上班适配器</strong><small>拖动下方滑杆卸妆 / 换装</small></div></div><div class="morph-labels"><span>💄 精致白领</span><b id="dressState">妆发完整</b><span>留仙洞打工人 🩴</span></div><input id="dressSlider" type="range" min="0" max="100" value="12" aria-label="从精致白领滑向留仙洞打工人"><small>往右滑，完成适配　→</small></div>
 <div class="text">
 <h2>先是口红。<br>然后是<i>洞洞鞋。</i>
 </h2>
@@ -179,18 +179,9 @@
 <div class="text">
 <h2>香港只隔了<br>一道关。</h2>
 <div class="body">
-<p>周末去了趟香港。过关以后，我突然又想打扮了。街上的年轻人穿得干净，有健身的痕迹，脸上还剩一点精神。当然，拿周末的香港和工作日的深圳比，很作弊。</p>
-<div class="aside">晚上回程，海关一过，地铁里又是熟悉的疲惫。</div>
-</div>
-</div>
-</section>
-<section class="floor paris">
-<div class="floor-no">记忆</div>
-<div class="text">
-<h2>Bonsoir.</h2>
-<div class="body">
-<p>香港让我想起巴黎。黄昏回家，在楼道碰见邻居，彼此说一句 bonsoir。那时我很自由，也不用靠巴黎给我发工资。</p>
-<div class="aside">巴黎是诗和远方，深圳是出海搞钱。我两样都想要。</div>
+<p>周末去了一趟香港。过关以后，我突然又想化妆了。原来精致没有消失，只是在深圳的工作日暂时停运。</p>
+<button type="button" class="customs-stamp"><span>按下盖章</span><b>↓</b></button>
+<div class="stamp-mark" aria-hidden="true"><strong>准予过关</strong><small>CLEARED · 24H</small></div>
 </div>
 </div>
 </section>
@@ -221,7 +212,8 @@ const canvas=document.querySelector('#scratchCanvas'),wrap=document.querySelecto
 <script>document.querySelectorAll('.accept-order').forEach(button=>button.addEventListener('click',()=>{const card=button.closest('.order-card'),clock=card.querySelector('strong');card.classList.remove('accepted');void card.offsetWidth;card.classList.add('accepted');button.firstChild.textContent='已接单。新订单 ';clock.textContent='04:59';setTimeout(()=>button.firstChild.textContent='接单 ',1500)}));</script>
 <script>document.querySelector('.open-doors')?.addEventListener('click',()=>{document.querySelector('#trainDoors').classList.add('open');setTimeout(()=>{const sound=document.querySelector('#metroSound');if(sound?.getAttribute('aria-pressed')==='false')sound.click()},420)});</script>
 <script>document.querySelector('.answer-boss')?.addEventListener('click',e=>{const phone=e.currentTarget.closest('.boss-phone');phone.classList.toggle('answered');e.currentTarget.firstChild.textContent=phone.classList.contains('answered')?'挂断 ':'接听 '});</script>
-<script>{const slider=document.querySelector('#dressSlider'),stage=document.querySelector('#dressState'),screen=document.querySelector('.wardrobe');slider?.addEventListener('input',()=>{const n=+slider.value;screen.style.setProperty('--dress',n+'%');stage.textContent=n<35?'妆发完整':n<70?'口红开始失联':'洞洞鞋已装备'})}</script>
+<script>{const slider=document.querySelector('#dressSlider'),stage=document.querySelector('#dressState'),screen=document.querySelector('.wardrobe');function dressUp(){const n=+slider.value;screen.style.setProperty('--dress',n+'%');screen.style.setProperty('--dress-n',n/100);stage.textContent=n<28?'妆发完整':n<55?'口红开始失联':n<82?'工牌接管人格':'洞洞鞋已装备';screen.classList.toggle('adapted',n>92)}slider?.addEventListener('input',dressUp);dressUp()}</script>
+<script>document.querySelector('.customs-stamp')?.addEventListener('click',e=>{const scene=e.currentTarget.closest('.border');scene.classList.remove('stamped');void scene.offsetWidth;scene.classList.add('stamped');e.currentTarget.querySelector('span').textContent='已盖章'})</script>
 <style>
 @media(max-width:720px){
   .dispatch{min-height:100svh!important;padding:70px 6.5vw 18px!important;align-content:center!important}
@@ -269,6 +261,13 @@ function paintSilverTicket(){const r=wrap.getBoundingClientRect(),d=Math.min(dev
 <style>
 .metro-punchline{margin-top:8px!important;color:#b8ff32!important;font-family:"STKaiti","KaiTi","Kaiti SC",serif!important;font-size:clamp(19px,2.1vw,28px)!important;font-weight:700!important;line-height:1.55!important;letter-spacing:.025em!important;transform:rotate(-.35deg)}
 @media(max-width:720px){.metro-punchline{margin-top:3px!important;font-size:19px!important;line-height:1.55!important}}
+</style>
+<style>
+.wardrobe{--dress-n:.12}.makeover-game{display:grid!important;grid-template-columns:150px 1fr!important;gap:18px!important;align-items:center!important;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed #111}.mirror{position:relative;width:150px;height:128px;border:2px solid #111;border-radius:72px 72px 18px 18px;background:linear-gradient(145deg,#d9f7ff,#fff);overflow:hidden;box-shadow:inset 7px 0 0 rgba(255,255,255,.7)}.face{position:absolute;z-index:2;left:45px;top:24px;width:62px;height:72px;border:2px solid #111;border-radius:46% 46% 48% 48%;background:#f2c5aa}.hair{position:absolute;z-index:3;left:36px;top:10px;width:78px;height:43px;border-radius:48px 48px 13px 13px;background:#2a211e;transform:rotate(calc(var(--dress-n)*5deg));transition:.15s}.hair:before,.hair:after{content:"";position:absolute;opacity:var(--dress-n);width:28px;height:8px;border-top:3px solid #2a211e;border-radius:50%;transition:.15s}.hair:before{left:-15px;top:21px;transform:rotate(-25deg)}.hair:after{right:-15px;top:16px;transform:rotate(25deg)}.hair i{position:absolute;right:-10px;top:-3px;width:25px;height:25px;border:2px solid #111;border-radius:50%;background:#2a211e;transform:scale(var(--dress-n));transition:.15s}.brow,.eyes,.blush,.lip{position:absolute;display:block}.brow{left:12px;top:24px;width:13px;height:5px;border-top:2px solid #33231d;border-radius:50%;box-shadow:27px 0 0 -1px #f2c5aa,27px 0 0 0 #33231d}.eyes{left:13px;top:32px;width:8px;height:5px;border-bottom:2px solid #111;border-radius:50%;box-shadow:28px 0 0 -1px #f2c5aa,28px 0 0 0 #111;transform:translateY(calc(var(--dress-n)*2px))}.blush{left:7px;top:43px;width:13px;height:7px;border-radius:50%;background:#ef7791;box-shadow:36px 0 #ef7791;opacity:calc(1 - var(--dress-n));transition:.15s}.lip{left:23px;bottom:10px;width:17px;height:8px;border-radius:50% 50% 55% 55%;background:#d92f5a;opacity:calc(1 - var(--dress-n));transform:scaleX(calc(1 - var(--dress-n)*.45));transition:.15s}.shirt{position:absolute;z-index:1;left:34px;bottom:-13px;width:84px;height:47px;border:2px solid #111;border-radius:20px 20px 0 0;background:color-mix(in srgb,#fff calc((1 - var(--dress-n))*100%),#8fbc55);transition:.15s}.shirt i{position:absolute;left:36px;top:-2px;width:13px;height:24px;border:2px solid #111;border-top:0;background:#f6df3c;opacity:var(--dress-n)}.shirt b{position:absolute;right:5px;top:14px;font:800 7px Arial,sans-serif;opacity:var(--dress-n)}.crocs{position:absolute;z-index:4;left:31px;bottom:3px;font-size:23px;letter-spacing:21px;opacity:var(--dress-n);transform:translateY(calc((1 - var(--dress-n))*24px)) scale(calc(.65 + var(--dress-n)*.35));transition:.15s}.makeover-copy{text-align:left}.makeover-copy span{display:block;font:8px Arial,sans-serif;letter-spacing:.18em}.makeover-copy strong{display:block;margin:7px 0;font:900 18px/1.1 "Microsoft YaHei UI",sans-serif}.makeover-copy small{font:9px Arial,sans-serif;letter-spacing:.08em}.morph-labels{display:grid!important}.wardrobe.adapted .mirror{animation:mirrorPop .55s cubic-bezier(.2,1.6,.3,1)}.wardrobe.adapted .makeover-copy:after{content:"✦ 适配完成 ✦";display:block;margin-top:7px;color:#e54165;font:900 12px "Microsoft YaHei UI",sans-serif;animation:giftBounce .55s both}@keyframes mirrorPop{50%{transform:scale(1.06) rotate(-2deg)}}
+@media(max-width:720px){.makeover-game{grid-template-columns:116px 1fr!important;gap:12px!important}.mirror{width:116px;height:108px}.face{left:34px;top:20px}.hair{left:25px;top:7px}.shirt{left:23px}.crocs{left:20px;bottom:1px}.makeover-copy strong{font-size:14px}.makeover-copy small{font-size:7px}.wardrobe-morph{padding:10px!important}.wardrobe-morph input{margin:10px 0 5px!important}}
+</style>
+<style>
+.border .body{position:relative;padding-bottom:86px!important}.customs-stamp{grid-column:1/-1;width:190px;min-height:54px;margin-top:8px;border:2px solid #ff554d;border-radius:7px;background:rgba(7,18,29,.72);color:#fff;font:800 11px "Microsoft YaHei UI",sans-serif;letter-spacing:.12em;cursor:pointer;box-shadow:5px 5px 0 #ff554d;display:flex;align-items:center;justify-content:center;gap:18px}.customs-stamp b{font-size:24px;animation:cueDown 1s ease-in-out infinite}.stamp-mark{position:absolute;right:22px;bottom:18px;width:154px;height:66px;border:4px double #ef3e39;border-radius:50%;display:grid;place-content:center;text-align:center;color:#ef3e39;opacity:0;transform:translateY(-150px) rotate(-16deg) scale(1.35);filter:blur(1px);pointer-events:none}.stamp-mark strong{font:900 22px/1 "Microsoft YaHei UI",sans-serif;letter-spacing:.12em}.stamp-mark small{margin-top:5px;font:800 8px Arial,sans-serif;letter-spacing:.18em}.border.stamped .stamp-mark{animation:stampDrop .62s cubic-bezier(.15,.86,.23,1.2) both}.border.stamped .hk-notes i{animation:cashFly 4.2s cubic-bezier(.18,.55,.25,1) var(--d) both!important}@keyframes stampDrop{0%{opacity:0;transform:translateY(-150px) rotate(-16deg) scale(1.35);filter:blur(2px)}58%{opacity:1;transform:translateY(6px) rotate(-9deg) scale(.92);filter:none}76%{transform:translateY(-5px) rotate(-10deg) scale(1.04)}100%{opacity:.92;transform:translateY(0) rotate(-10deg) scale(1);filter:none}}@media(max-width:720px){.border .body{padding-bottom:92px!important}.customs-stamp{width:165px;min-height:50px;font-size:10px}.stamp-mark{right:10px;bottom:18px;width:137px;height:59px}.stamp-mark strong{font-size:19px}}
 </style>
 </body>
 </html>
