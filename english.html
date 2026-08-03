@@ -1,4 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Below the 24th Floor</title><style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Below the 24th Floor</title>
+<style>
 :root{--milk:#eceae4;--black:#0a0b0c;--green:#b8ff32;--grey:#9b9d98}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--milk);font-family:Arial,"Microsoft YaHei",sans-serif;overflow-x:hidden}.top{position:fixed;z-index:20;top:0;left:0;right:0;padding:19px 26px;display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.18);font:10px/1 Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;mix-blend-mode:difference}.counter{position:fixed;z-index:25;right:22px;top:50%;transform:translateY(-50%);font:76px/.8 "Arial Narrow",Arial,sans-serif;letter-spacing:-.09em;color:var(--green);writing-mode:vertical-rl}.counter small{font-size:9px;letter-spacing:.18em;color:#fff;margin-top:15px}.track{position:fixed;z-index:22;left:0;top:0;width:3px;height:0;background:var(--green)}
 .hero{height:160vh;position:relative}.hero-img{position:sticky;top:0;height:100vh;background:url('elevator-topdown.png') center 42%/cover no-repeat}.hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.76),transparent 53%),linear-gradient(0deg,rgba(0,0,0,.78),transparent 46%)}.hero-copy{position:absolute;z-index:3;left:6vw;top:21vh;width:min(780px,78vw)}.eyebrow{font:10px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:28px}.hero h1{font:400 clamp(76px,13.8vw,210px)/.72 "Arial Narrow",Impact,sans-serif;letter-spacing:-.075em;text-transform:uppercase;margin:0}.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px var(--milk);margin-left:12vw}.hero .intro{max-width:510px;margin:48px 0 0 23vw;font:17px/1.9 "Songti SC","SimSun",serif}.brake{position:absolute;z-index:4;bottom:11vh;right:10vw;font:italic 24px/1.4 Georgia,serif;color:var(--green);transform:rotate(-3deg)}
 .floor{min-height:100vh;padding:14vh 8vw;display:grid;grid-template-columns:110px minmax(0,1fr);gap:5vw;align-items:center;border-top:1px solid rgba(255,255,255,.18);position:relative}.floor-no{align-self:start;font:12px/1 Arial,sans-serif;letter-spacing:.15em;color:var(--green)}.floor-no:after{content:"";display:block;height:64px;width:1px;background:rgba(255,255,255,.3);margin:20px 0 0 5px}.text{max-width:970px}.text h2{font:400 clamp(48px,8vw,120px)/.87 "Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:-.06em;margin:0 0 40px}.text h2 i{font-family:Georgia,serif;text-transform:none;font-weight:400}.body{display:grid;grid-template-columns:1fr 1fr;gap:7vw;margin-left:16vw}.body p{margin:0;font:16px/1.95 "Songti SC","SimSun",serif;color:#cfcdc6}.aside{font:italic 19px/1.6 Georgia,serif;color:var(--grey)}
@@ -8,16 +14,146 @@
 .call{min-height:115vh}.quote{font:400 clamp(55px,8.6vw,128px)/1.02 "Songti SC","SimSun",serif;letter-spacing:-.06em;margin:0}.quote span{color:var(--green)}.call .body{margin-top:60px}.end{min-height:110vh;background:var(--milk);color:#0a0b0c;display:flex;align-items:flex-end;padding:10vh 8vw}.end h2{font:400 clamp(58px,10vw,150px)/.85 "Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:-.065em;margin:0}.end h2 i{font-family:Georgia,serif;text-transform:none;font-weight:400}.end p{max-width:650px;margin:45px 0 0 28vw;font:18px/1.9 "Songti SC","SimSun",serif}.play{position:fixed;z-index:30;bottom:20px;left:26px;border:1px solid currentColor;background:rgba(0,0,0,.2);color:#fff;padding:10px 14px;font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px)}
 @media(max-width:720px){.counter{font-size:48px;right:12px}.floor{grid-template-columns:1fr;padding:13vh 8vw}.floor-no:after{height:25px}.body{grid-template-columns:1fr;margin-left:8vw;gap:25px}.hero h1{font-size:24vw}.hero .intro{margin-left:8vw}.men{margin-left:0}.men span{font-size:22px}.men-note{margin-left:0}.end p{margin-left:8vw}.top{padding:16px}.play{left:16px}}
 .hero .intro,.body p,.end p{font-family:Georgia,"Times New Roman",serif}.quote{font-family:"Arial Narrow",Impact,sans-serif;text-transform:uppercase}.men span{font:11px/1 Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}.men span:after{content:"STATUS: ONLINE"}.men span:nth-child(even):after{content:"BATTERY: 09%"}
-</style></head><body><div class="track"></div><header class="top"><span>A vertical essay / Shenzhen</span><span>August, 2026</span></header><div class="counter"><span id="level">24</span><small>floor</small></div><button class="play" id="voice">Play narration ↗</button><main>
-<section class="hero"><div class="hero-img"></div><div class="hero-copy"><div class="eyebrow">A descent in seven stops</div><h1>Below<span>the 24th</span>Floor</h1><p class="intro">Every morning, I descend from the 24th floor of my Shenzhen apartment. The lift brakes every few levels. My stomach continues downward; the rest of me does not. Mild nausea, before breakfast.</p></div><div class="brake">— the body resigns before the mind does.</div></section>
-<section class="floor corridor"><div class="floor-no">G / 08:17</div><div class="text"><h2>Someone else's<br><em>better life.</em></h2><div class="body"><p>On the office skybridge, grandparents herd toddlers in a dialect I cannot understand. It is not a park, but it has become theirs. I imagine they belong to an engineer next door—the kind paid a million yuan to miss dinner.</p><div class="aside">He works past midnight to give the family a better life. The better life waits downstairs.</div></div></div></section>
-<section class="floor"><div class="floor-no">B1 / 08:43</div><div class="text"><h2>First, lipstick.<br>Then, <i>Crocs.</i></h2><div class="body"><p>On day one, I dressed as if Beijing CBD might be watching. Proper trousers. Make-up. Intentions. Within a week, I was wearing Crocs. Shenzhen had defeated me through footwear.</p><div class="aside">Adaptation can look exactly like surrender. Sometimes it is simply Tuesday.</div></div></div></section>
-<section class="floor border"><div class="floor-no">BORDER</div><div class="text"><h2>Hong Kong<br>is one<br>checkpoint away.</h2><div class="body"><p>Across the border, young people exercise. Their shirts appear acquainted with an iron. There is still some light behind their faces. Coming back, exhaustion settles over the carriage before the doors close.</p><div class="aside">A border does not only separate jurisdictions. Sometimes it separates two versions of your face.</div></div></div></section>
-<section class="floor metro"><div class="floor-no">23:06</div><div class="text"><h2>Human<br>match-three.</h2><div class="body"><p>At 11 p.m., the men on the metro resemble a match-three game: glasses, phones, soft middles, the faint shine of overtime. Match any three to clear the level. Unfortunately, none of us clears the level.</p><div class="aside">Perhaps they go online to complain about women they dislike. I may be online complaining about them. Romance is not dead; it has merely become bilateral criticism.</div><div class="men"><span></span><span></span><span></span><span></span><span></span></div><div class="men-note">Five lives loading · no exits detected</div></div></div></section>
-<section class="floor paris"><div class="floor-no">MEMORY</div><div class="text"><h2>Bonsoir.</h2><div class="body"><p>I miss the woman I was in Paris, saying bonsoir to a neighbour at dusk. Not because Paris is morally superior. Because that woman still had enough attention left to notice the sky—and enough self left to be recognised by a greeting.</p><div class="aside">In Paris, evening arrived. In Shenzhen, work merely became night.</div></div></div></section>
-<section class="floor call"><div class="floor-no">BURNOUT</div><div class="text"><p class="quote">“Does it<br><span>have to be</span><br>tonight?”</p><div class="body"><p>At eight one evening, I took the lift down to throw away the rubbish. A woman beside me was negotiating with a voice from work. She was technically outside. Work had declined to notice.</p><div class="aside">We were all descending in the same metal box. Some of us had simply learned not to feel the brake.</div></div></div></section>
-<section class="end"><div><h2>I want money.<br>I also want<br><i>a life.</i></h2><p>This is not a debate about toughness. I want to know how far we must trade our health, time and capacity for feeling in exchange for a “better life”—and on which floor we finally admit we took the wrong lift.</p></div></section></main><script>
-const levels=['24','G','B1','HK','23:06','PARIS','—'];const sections=[...document.querySelectorAll('section')],level=document.querySelector('#level'),track=document.querySelector('.track');addEventListener('scroll',()=>{const p=scrollY/(document.body.scrollHeight-innerHeight);track.style.height=p*100+'%';let best=0,dist=1e9;sections.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top-innerHeight*.35);if(d<dist){dist=d;best=i}});level.textContent=levels[Math.min(best,levels.length-1)]});
-const words=`Every morning, I descend from the twenty-fourth floor of my Shenzhen apartment. The lift brakes every few levels. My stomach continues downward; the rest of me does not. On day one, I dressed as if Beijing CBD might be watching. Within a week, I was wearing Crocs. Shenzhen had defeated me through footwear. At eleven p.m., the men on the metro resemble a match-three game: glasses, phones, soft middles, the faint shine of overtime. Match any three to clear the level. Unfortunately, none of us clears the level. Perhaps they go online to complain about women they dislike. I may be online complaining about them. Romance is not dead; it has merely become bilateral criticism. I miss the woman I was in Paris, saying bonsoir to a neighbour at dusk. In Paris, evening arrived. In Shenzhen, work merely became night. At eight one evening, a woman in my lift was negotiating with a voice from work. She was technically outside. Work had declined to notice. We were all descending in the same metal box. Some of us had simply learned not to feel the brake. I want money. I also want a life. On which floor do we finally admit we took the wrong lift?`;
-let playing=false;document.querySelector('#voice').onclick=e=>{if(playing){speechSynthesis.cancel();playing=false;e.target.textContent='Play narration ↗';return}const u=new SpeechSynthesisUtterance(words);u.lang='en-GB';u.rate=.84;u.pitch=.9;u.onend=()=>{playing=false;e.target.textContent='Play narration ↗'};speechSynthesis.speak(u);playing=true;e.target.textContent='Stop ×'};
-</script></body></html>
+</style>
+<style>.lang-switch{position:fixed;z-index:32;right:26px;top:52px;display:flex;gap:7px;font:9px Arial,sans-serif;letter-spacing:.12em}.lang-switch a{color:#fff;text-decoration:none;padding:7px 9px;border:1px solid rgba(255,255,255,.38);background:rgba(0,0,0,.28);backdrop-filter:blur(8px)}.lang-switch a.active{background:#b8ff32;color:#0a0b0c;border-color:#b8ff32}@media(max-width:720px){.lang-switch{right:16px}}</style>
+<style>.lang-switch{top:14px;right:20px;gap:0;border:1px solid rgba(255,255,255,.45);border-radius:999px;overflow:hidden;background:rgba(8,9,10,.78);backdrop-filter:blur(14px)}.lang-switch a{min-height:44px;display:flex;align-items:center;padding:0 15px;border:0!important;border-right:1px solid rgba(255,255,255,.25)!important;background:transparent;font-size:11px;letter-spacing:.08em}.lang-switch a:last-child{border-right:0!important}.lang-switch a.active{background:#b8ff32;color:#0a0b0c}.top{padding-right:270px}@media(max-width:720px){.lang-switch{top:auto;right:12px;bottom:12px}.lang-switch a{min-height:46px;padding:0 13px}.top{padding-right:18px}.top span:last-child{display:none}}</style>
+<style>.money{background:#b8ff32;color:#0a0b0c}.money .floor-no,.money .body p,.money .aside{color:#0a0b0c}.money .floor-no:after{background:#0a0b0c}.trial{background:#111315}.reporter-screen{background:#e4e1d9;color:#0a0b0c}.reporter-screen .floor-no,.reporter-screen .body p,.reporter-screen .aside{color:#0a0b0c}.reporter-screen .floor-no:after{background:#0a0b0c}.men{grid-column:1/3;margin:38px 0 0!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;border:1px solid rgba(255,255,255,.35)!important}.men button{appearance:none;min-height:125px;border:0;border-right:1px solid rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.28);background:transparent;color:#ddd;padding:18px;text-align:left;cursor:pointer;font:700 15px/1.35 Arial,sans-serif;transition:.2s}.men button:nth-child(3n){border-right:0}.men button:nth-child(n+4){border-bottom:0}.men button small{display:block;margin-top:18px;font:9px Arial,sans-serif;letter-spacing:.12em;color:#777}.men button.chosen{background:#b8ff32;color:#0a0b0c}.men button.chosen small{color:#0a0b0c}.match-result{grid-column:1/3;min-height:28px;margin-top:14px;font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#b8ff32}@media(max-width:720px){.men{grid-template-columns:repeat(2,1fr)!important}.men button:nth-child(3n){border-right:1px solid rgba(255,255,255,.28)}.men button:nth-child(2n){border-right:0}.men button:nth-child(n+4){border-bottom:1px solid rgba(255,255,255,.28)}.men button:nth-child(n+5){border-bottom:0}}</style>
+<style>.hero h1,.text h2,.quote,.end h2{font-family:"Arial Rounded MT Bold","Trebuchet MS","Aptos Display",Arial,sans-serif!important;font-weight:900!important;letter-spacing:-.065em!important}.hero h1{line-height:.82!important}.text h2{line-height:.95!important;text-transform:none!important}.body p,.hero .intro,.end p{font-family:Aptos,"Segoe UI",Arial,sans-serif!important;font-weight:450;line-height:1.72}.aside{font-family:Aptos,"Segoe UI",Arial,sans-serif!important;font-style:normal;font-weight:600}.gesture{position:fixed;z-index:30;left:26px;bottom:20px;font:9px Arial,sans-serif;letter-spacing:.2em;color:#fff;mix-blend-mode:difference}.reveal{min-height:110vh;padding:13vh 8vw;background:#d8d6cf;color:#0a0b0c;display:grid;grid-template-columns:1fr 2.4fr;gap:6vw;align-items:center}.reveal-head{align-self:start;font:10px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}.scratch-wrap{position:relative;min-height:58vh;border:1px solid #0a0b0c;overflow:hidden;background:#b8ff32;display:grid;place-items:center;padding:8vw}.secret{font:900 clamp(30px,4.8vw,72px)/1.15 "Arial Rounded MT Bold","Trebuchet MS",sans-serif;letter-spacing:-.055em;max-width:900px}.scratch-wrap canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}.instruction{position:absolute;left:24px;bottom:20px;z-index:3;font:10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#fff;pointer-events:none;transition:opacity .4s}.instruction.gone{opacity:0}@media(max-width:720px){.reveal{grid-template-columns:1fr;padding:12vh 8vw}.scratch-wrap{min-height:64vh;padding:12vw 8vw}.gesture{left:16px}}</style>
+<style>.border{background:#3155d9!important;color:#f4f1e8!important}.border .floor-no,.border .body p,.border .aside{color:#f4f1e8!important}.border .floor-no:after{background:#f4f1e8!important}.counter.dark{color:#0a0b0c}.counter.dark small{color:#0a0b0c}.men button:hover{background:rgba(184,255,50,.1)}.men button:focus-visible,.lang-switch a:focus-visible{outline:3px solid #fff;outline-offset:-3px}.chapter-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.chapter-in.visible{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chapter-in{opacity:1;transform:none;transition:none}.noise{animation:none}}</style>
+<style>.floor{overflow:hidden;isolation:isolate}.floor-no:after{transform:scaleY(0);transform-origin:top;transition:transform .8s cubic-bezier(.2,.8,.2,1)}.floor.scene-active .floor-no:after{transform:scaleY(1)}.border .chapter-in{opacity:1;transform:none;clip-path:inset(0 50% 0 50%);transition:clip-path 1.15s cubic-bezier(.76,0,.24,1)}.border .chapter-in.visible{clip-path:inset(0)}.border:before{content:"";position:absolute;z-index:0;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.75);transform:scaleY(0);transition:transform .8s ease}.border.scene-active:before{transform:scaleY(1)}.border-axis{position:absolute;z-index:2;left:50%;top:10vh;transform:translateX(-50%);display:flex;align-items:center;gap:13px;font:9px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}.border-axis i{display:block;width:32px;height:1px;background:currentColor}.money:before{content:"$";position:absolute;right:-.04em;bottom:-.25em;font:900 54vw/.8 Arial,sans-serif;color:rgba(0,0,0,.055);z-index:0}.paris .chapter-in{filter:blur(12px);transform:scale(1.03);transition:filter 1.2s ease,transform 1.2s ease,opacity .7s}.paris .chapter-in.visible{filter:blur(0);transform:scale(1);opacity:1}.reporter-screen:before{content:"REC";position:absolute;right:8vw;top:12vh;font:800 11px Arial,sans-serif;letter-spacing:.2em;color:#d73527}.reporter-screen:after{content:"";position:absolute;right:calc(8vw + 38px);top:calc(12vh + 2px);width:7px;height:7px;border-radius:50%;background:#d73527;animation:rec 1.5s steps(1) infinite}@keyframes rec{50%{opacity:.15}}@media(prefers-reduced-motion:reduce){.border .chapter-in{clip-path:none}.paris .chapter-in{filter:none;transform:none}.reporter-screen:after{animation:none}}</style>
+</head>
+<body>
+<div class="track">
+</div>
+<header class="top">
+<span>A vertical essay / Shenzhen</span>
+<span>August, 2026</span>
+</header>
+<nav class="lang-switch" aria-label="Language switcher"><a href="index.html">Home</a><a href="chinese.html">中文</a><a class="active" href="english.html">English</a></nav>
+<div class="counter">
+<span id="level">24</span>
+<small>floor</small>
+</div>
+<div class="gesture">TOUCH · RUB · REVEAL</div>
+<main>
+<section class="hero">
+<div class="hero-img">
+</div>
+<div class="hero-copy">
+<div class="eyebrow">A descent in seven stops</div>
+<h1>Below<span>the 24th</span>Floor</h1>
+<p class="intro">Every morning, I take the lift down from the 24th floor of my Shenzhen apartment. Every few levels it brakes hard—the same shove as a hybrid ride-hailing car, complete with the driver's hair-oil smell. Both make me carsick. I have not had breakfast and already want to throw up.</p>
+</div>
+<div class="brake">— the body resigns before the mind does.</div>
+</section>
+<section class="floor corridor">
+<div class="floor-no">G / 08:17</div>
+<div class="text">
+<h2>Someone else's<br>
+<em>better life.</em>
+</h2>
+<div class="body">
+<p>On the office skybridge, grandparents herd toddlers in a dialect I cannot understand. It is not a park, but it has become theirs. I imagine they belong to an engineer next door—the kind paid a million yuan to miss dinner.</p>
+<div class="aside">He works past midnight to give the family a better life. The better life waits downstairs.</div>
+</div>
+</div>
+</section>
+<section class="floor">
+<div class="floor-no">B1 / 08:43</div>
+<div class="text">
+<h2>First, lipstick.<br>Then, <i>Crocs.</i>
+</h2>
+<div class="body">
+<p>On day one, I dressed as if Beijing CBD might be watching. Proper trousers. Make-up. Intentions. Within a week, I was wearing Crocs. Shenzhen had defeated me through footwear.</p>
+<div class="aside">Adaptation can look exactly like surrender. Sometimes it is simply Tuesday.</div>
+</div>
+</div>
+</section>
+<section class="floor money">
+<div class="floor-no">WHY HERE</div>
+<div class="text"><h2>I was not sent<br>to Shenzhen.<br>I chose it.</h2><div class="body"><p>I left media for an MBA, then joined a Chinese company going global. I wanted to move closer to money, seniority and the kind of success other people could recognise. It would be dishonest to mock conventional success while quietly checking how much everyone else was earning.</p><div class="aside">This is not a story about an artist accidentally entering a factory. I opened the door myself. The product simply looked different from the advertisement.</div></div></div>
+</section>
+<section class="floor border">
+<div class="floor-no">BORDER</div>
+<div class="border-axis"><span>THIS SIDE</span><i></i><span>THAT SIDE</span></div>
+<div class="text">
+<h2>Hong Kong is<br>one checkpoint<br>away.</h2>
+<div class="body">
+<p>One weekend I went to Hong Kong. Across the border, I suddenly wanted to dress properly again. I noticed what people wore, whether they exercised, whether their faces still had some life in them. Comparing a Hong Kong weekend with a Shenzhen workday is obviously cheating. Everyone looks better when they are not at work.</p>
+<div class="aside">Coming back that evening, the familiar exhaustion returned before the metro doors closed. The cities were one checkpoint apart. Apparently, so were two versions of me.</div>
+</div>
+</div>
+</section>
+<section class="floor metro">
+<div class="floor-no">23:06</div>
+<div class="text">
+<h2>Human<br>match-three.</h2>
+<div class="body">
+<p>At 11 p.m., the men on the metro resemble a match-three game: glasses, phones, soft middles, the faint shine of overtime. This is unkind. I probably look no better—Crocs, phone, a face requesting no further human contact. Match any three to clear the level. Unfortunately, none of us clears the level.</p>
+<div class="aside">Perhaps they, like me, are online complaining about the opposite sex.</div>
+<div class="men">
+<button type="button">99+ UNREAD<small>WORK CHAT STILL ACTIVE</small></button>
+<button type="button">BATTERY 09%<small>OWNER IN SIMILAR CONDITION</small></button>
+<button type="button">FOOD DELIVERED<small>WAITING 42 MINUTES</small></button>
+<button type="button">09:00 TOMORROW<small>INVITATION ACCEPTED</small></button>
+<button type="button">2,418 STEPS<small>MOSTLY TO THE RESTROOM</small></button>
+<button type="button">3H 17M SCROLLING<small>USER CALLS THIS REST</small></button>
+</div>
+<div class="match-result" id="matchResult">SELECT THREE TO CLEAR</div>
+</div>
+</div>
+</section>
+<section class="floor trial">
+<div class="floor-no">INTERNAL COURT</div>
+<div class="text"><h2>Everyone else<br>can take it.<br>Why can't you?</h2><div class="body"><p>The hardest part was not always the job. It was the trial running inside my head: too picky, too ordinary, too demanding; wants money, freedom and admiration at the same time. Court remained in session around the clock. I played judge, prosecutor and defendant.</p><div class="aside">I hated writing reports for management, yet spent every evening preparing one for the manager in my head.</div></div></div>
+</section>
+<section class="floor paris">
+<div class="floor-no">MEMORY</div>
+<div class="text">
+<h2>Bonsoir.</h2>
+<div class="body">
+<p>Coming back from Hong Kong made me think of Paris: saying bonsoir to a neighbour at dusk, still noticing when the sky changed colour. That comparison is even less fair. I was studying then. I did not have to earn my living from Paris. Comparing student life there with office life in Shenzhen is rigged from the start.</p>
+<div class="aside">Still, I may not miss Paris as much as I miss the version of myself who had enough energy left to notice an evening.</div>
+</div>
+</div>
+</section>
+<section class="floor reporter-screen">
+<div class="floor-no">WHAT REMAINS</div>
+<div class="text"><h2>The media title left.<br>The reporter<br>did not.</h2><div class="body"><p>I have regretted leaving media. Not only because the title sounded respectable. I genuinely liked going out to find a story, talking until a conversation became human, then following one detail far enough to see what the polished statement was hiding.</p><div class="aside">I may not miss the institution. I miss the person who still believed a difficult question was worth asking.</div></div></div>
+</section>
+<section class="floor call">
+<div class="floor-no">BURNOUT</div>
+<div class="text">
+<p class="quote">“Does it<br>
+<span>have to be</span>
+<br>tonight?”</p>
+<div class="body">
+<p>At eight one evening, I took the lift down to throw away the rubbish. A woman beside me was negotiating with a voice from work. She was technically outside. Work had declined to notice.</p>
+<div class="aside">We were all descending in the same metal box. Some of us had simply learned not to feel the brake.</div>
+</div>
+</div>
+</section>
+<section class="reveal">
+<div class="reveal-head">INVISIBLE INK / 10</div>
+<div class="scratch-wrap" id="scratchWrap">
+<div class="secret">I kept wondering if I simply could not take hardship.<br>Turns out I can.<br><br>I just keep investigating who made it,<br>why it costs so much,<br><strong>and why everyone is still queueing.</strong></div>
+<canvas id="scratchCanvas"></canvas>
+<div class="instruction" id="scratchHint">RUB WITH A FINGER OR CURSOR ↗</div>
+</div>
+</section>
+<section class="end">
+<div>
+<h2>I want money.<br>I also want<br>
+<i>a life.</i>
+</h2>
+<p>I still want money—not in the polite “money isn't everything” sense. I want enough to choose whether I work, which country I live in, and whether marriage or children belong in my life. But if earning it first removes the part of me that writes, talks and remains curious about people, who exactly is the freedom being purchased for?</p>
+</div>
+</section>
+</main>
+<script>
+const levels=['24','G','B1','$','HK','23:06','?','PARIS','REC','—','—','—'];const sections=[...document.querySelectorAll('section')],level=document.querySelector('#level'),counter=document.querySelector('.counter'),track=document.querySelector('.track');sections.forEach(s=>s.querySelector('.text,.title,.scratch-wrap')?.classList.add('chapter-in'));const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{entry.target.classList.toggle('visible',entry.isIntersecting);entry.target.closest('section')?.classList.toggle('scene-active',entry.isIntersecting)}),{threshold:.18});document.querySelectorAll('.chapter-in').forEach(el=>revealObserver.observe(el));addEventListener('scroll',()=>{const p=scrollY/(document.body.scrollHeight-innerHeight);track.style.height=p*100+'%';let best=0,dist=1e9;sections.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top-innerHeight*.35);if(d<dist){dist=d;best=i}});const active=sections[best];level.textContent=levels[Math.min(best,levels.length-1)];counter.classList.toggle('dark',active.matches('.corridor,.money,.reporter-screen,.reveal,.end'))});
+const matchButtons=[...document.querySelectorAll('.men button')],matchResult=document.querySelector('#matchResult');let chosen=0;matchButtons.forEach(button=>button.addEventListener('click',()=>{if(button.classList.contains('chosen')){button.classList.remove('chosen');chosen--}else if(chosen<3){button.classList.add('chosen');chosen++}matchResult.textContent=chosen<3?`${3-chosen} MORE TO GO`:'CLEAR FAILED: WORK RESUMES TOMORROW.';matchButtons.forEach(b=>b.style.opacity=chosen===3&&!b.classList.contains('chosen')?'.28':'1')}));
+const canvas=document.querySelector('#scratchCanvas'),wrap=document.querySelector('#scratchWrap'),hint=document.querySelector('#scratchHint'),ctx=canvas.getContext('2d');let rubbing=false,revealed=false;function prepareInk(){const r=wrap.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#111315';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='rgba(184,255,50,.32)';for(let y=8;y<r.height;y+=14)for(let x=8;x<r.width;x+=14){const shift=(y/14)%2?5:0;ctx.beginPath();ctx.arc(x+shift,y,1.5,0,Math.PI*2);ctx.fill()}}function erase(e){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;ctx.globalCompositeOperation='destination-out';const g=ctx.createRadialGradient(x,y,6,x,y,58);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.72,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,60,0,Math.PI*2);ctx.fill();if(!revealed){revealed=true;hint.classList.add('gone')}}canvas.addEventListener('pointerdown',e=>{rubbing=true;canvas.setPointerCapture(e.pointerId);erase(e)});canvas.addEventListener('pointermove',e=>{if(rubbing)erase(e)});canvas.addEventListener('pointerup',()=>rubbing=false);canvas.addEventListener('pointercancel',()=>rubbing=false);prepareInk();
+</script>
+</body>
+</html>

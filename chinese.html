@@ -15,6 +15,11 @@
 @media(max-width:720px){.counter{font-size:48px;right:12px}.floor{grid-template-columns:1fr;padding:13vh 8vw}.floor-no:after{height:25px}.body{grid-template-columns:1fr;margin-left:8vw;gap:25px}.hero h1{font-size:24vw}.hero .intro{margin-left:8vw}.men{margin-left:0}.men span{font-size:22px}.men-note{margin-left:0}.end p{margin-left:8vw}.top{padding:16px}.play{left:16px}}
 .hero .intro,.body p,.end p{font-family:"Songti SC","STSong","SimSun",serif}.quote{font-family:"Songti SC","STSong","SimSun",serif;text-transform:none}.men span{font:10px/1.3 Arial,sans-serif;letter-spacing:.08em}.men span:after{content:"仍在线"}.men span:nth-child(even):after{content:"电量 09%"}
 </style>
+<style>.lang-switch{position:fixed;z-index:32;right:26px;top:52px;display:flex;gap:7px;font:9px Arial,sans-serif;letter-spacing:.12em}.lang-switch a{color:#fff;text-decoration:none;padding:7px 9px;border:1px solid rgba(255,255,255,.38);background:rgba(0,0,0,.28);backdrop-filter:blur(8px)}.lang-switch a.active{background:#b8ff32;color:#0a0b0c;border-color:#b8ff32}@media(max-width:720px){.lang-switch{right:16px}}</style>
+<style>.lang-switch{top:14px;right:20px;gap:0;border:1px solid rgba(255,255,255,.45);border-radius:999px;overflow:hidden;background:rgba(8,9,10,.78);backdrop-filter:blur(14px)}.lang-switch a{min-height:44px;display:flex;align-items:center;padding:0 15px;border:0!important;border-right:1px solid rgba(255,255,255,.25)!important;background:transparent;font-size:11px;letter-spacing:.08em}.lang-switch a:last-child{border-right:0!important}.lang-switch a.active{background:#b8ff32;color:#0a0b0c}.top{padding-right:270px}@media(max-width:720px){.lang-switch{top:auto;right:12px;bottom:12px}.lang-switch a{min-height:46px;padding:0 13px}.top{padding-right:18px}.top span:last-child{display:none}}</style>
+<style>.money{background:#b8ff32;color:#0a0b0c}.money .floor-no,.money .body p,.money .aside{color:#0a0b0c}.money .floor-no:after{background:#0a0b0c}.trial{background:#111315}.reporter-screen{background:#e4e1d9;color:#0a0b0c}.reporter-screen .floor-no,.reporter-screen .body p,.reporter-screen .aside{color:#0a0b0c}.reporter-screen .floor-no:after{background:#0a0b0c}.men{grid-column:1/3;margin:38px 0 0!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;border:1px solid rgba(255,255,255,.35)!important}.men button{appearance:none;min-height:125px;border:0;border-right:1px solid rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.28);background:transparent;color:#ddd;padding:18px;text-align:left;cursor:pointer;font:700 15px/1.35 "Microsoft YaHei UI","PingFang SC",sans-serif;transition:.2s}.men button:nth-child(3n){border-right:0}.men button:nth-child(n+4){border-bottom:0}.men button small{display:block;margin-top:18px;font:9px Arial,sans-serif;letter-spacing:.12em;color:#777}.men button.chosen{background:#b8ff32;color:#0a0b0c}.men button.chosen small{color:#0a0b0c}.match-result{grid-column:1/3;min-height:28px;margin-top:14px;font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#b8ff32}@media(max-width:720px){.men{grid-template-columns:repeat(2,1fr)!important}.men button:nth-child(3n){border-right:1px solid rgba(255,255,255,.28)}.men button:nth-child(2n){border-right:0}.men button:nth-child(n+4){border-bottom:1px solid rgba(255,255,255,.28)}.men button:nth-child(n+5){border-bottom:0}}</style>
+<style>.border{background:#3155d9!important;color:#f4f1e8!important}.border .floor-no,.border .body p,.border .aside{color:#f4f1e8!important}.border .floor-no:after{background:#f4f1e8!important}.counter.dark{color:#0a0b0c}.counter.dark small{color:#0a0b0c}.men button:hover{background:rgba(184,255,50,.1)}.men button:focus-visible,.lang-switch a:focus-visible{outline:3px solid #fff;outline-offset:-3px}.chapter-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.chapter-in.visible{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chapter-in{opacity:1;transform:none;transition:none}.noise{animation:none}}</style>
+<style>.floor{overflow:hidden;isolation:isolate}.floor-no:after{transform:scaleY(0);transform-origin:top;transition:transform .8s cubic-bezier(.2,.8,.2,1)}.floor.scene-active .floor-no:after{transform:scaleY(1)}.border .chapter-in{opacity:1;transform:none;clip-path:inset(0 50% 0 50%);transition:clip-path 1.15s cubic-bezier(.76,0,.24,1)}.border .chapter-in.visible{clip-path:inset(0)}.border:before{content:"";position:absolute;z-index:0;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.75);transform:scaleY(0);transition:transform .8s ease}.border.scene-active:before{transform:scaleY(1)}.border-axis{position:absolute;z-index:2;left:50%;top:10vh;transform:translateX(-50%);display:flex;align-items:center;gap:13px;font:9px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}.border-axis i{display:block;width:32px;height:1px;background:currentColor}.money:before{content:"¥";position:absolute;right:-.04em;bottom:-.25em;font:900 54vw/.8 Arial,sans-serif;color:rgba(0,0,0,.055);z-index:0}.paris .chapter-in{filter:blur(12px);transform:scale(1.03);transition:filter 1.2s ease,transform 1.2s ease,opacity .7s}.paris .chapter-in.visible{filter:blur(0);transform:scale(1);opacity:1}.reporter-screen:before{content:"REC";position:absolute;right:8vw;top:12vh;font:800 11px Arial,sans-serif;letter-spacing:.2em;color:#d73527}.reporter-screen:after{content:"";position:absolute;right:calc(8vw + 38px);top:calc(12vh + 2px);width:7px;height:7px;border-radius:50%;background:#d73527;animation:rec 1.5s steps(1) infinite}@keyframes rec{50%{opacity:.15}}@media(prefers-reduced-motion:reduce){.border .chapter-in{clip-path:none}.paris .chapter-in{filter:none;transform:none}.reporter-screen:after{animation:none}}</style>
 <style>
 .hero h1,.text h2,.quote,.end h2{font-family:"Microsoft YaHei UI","PingFang SC","HarmonyOS Sans SC","Noto Sans CJK SC",sans-serif!important;font-weight:800!important;text-transform:none!important;letter-spacing:-.055em!important}.hero h1{line-height:.88!important}.hero h1 span{margin-left:8vw}.text h2{line-height:1.03!important;max-width:900px}.quote{line-height:1.08!important}.end h2{line-height:1!important}.body p,.hero .intro,.end p{font-family:"Microsoft YaHei UI","PingFang SC","HarmonyOS Sans SC",sans-serif!important;font-weight:400;letter-spacing:.015em}.aside{font-family:"Microsoft YaHei UI","PingFang SC",sans-serif!important;font-style:normal;font-weight:500}.gesture{position:fixed;z-index:30;left:26px;bottom:20px;font:9px Arial,sans-serif;letter-spacing:.2em;color:#fff;mix-blend-mode:difference}.reveal{min-height:110vh;padding:13vh 8vw;background:#d8d6cf;color:#0a0b0c;display:grid;grid-template-columns:1fr 2.4fr;gap:6vw;align-items:center}.reveal-head{align-self:start;font:10px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}.scratch-wrap{position:relative;min-height:58vh;border:1px solid #0a0b0c;overflow:hidden;background:#b8ff32;display:grid;place-items:center;padding:8vw}.secret{font:800 clamp(32px,5vw,76px)/1.25 "Microsoft YaHei UI","PingFang SC",sans-serif;letter-spacing:-.05em;max-width:800px}.scratch-wrap canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}.instruction{position:absolute;left:24px;bottom:20px;z-index:3;font:10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#fff;pointer-events:none;transition:opacity .4s}.instruction.gone{opacity:0}@media(max-width:720px){.reveal{grid-template-columns:1fr;padding:12vh 8vw}.scratch-wrap{min-height:64vh;padding:12vw 8vw}.gesture{left:16px}.hero h1 span{margin-left:4vw}}
 </style>
@@ -26,6 +31,7 @@
 <span>一篇垂直随笔 / 深圳</span>
 <span>2026年8月</span>
 </header>
+<nav class="lang-switch" aria-label="语言切换"><a href="index.html">首页</a><a class="active" href="chinese.html">中文</a><a href="english.html">English</a></nav>
 <div class="counter">
 <span id="level">24</span>
 <small>层</small>
@@ -39,7 +45,7 @@
 <div class="eyebrow">一次停靠七站的下沉</div>
 <h1>24楼<span>以下</span>
 </h1>
-<p class="intro">每天早晨，我从深圳公寓的24楼坐电梯下去。每隔几层它就猛地刹一下，推背感很像坐了一辆混动网约车。区别是网约车里一般还混着司机的头油味。两种我都晕。早餐没吃，已经有点想吐。</p>
+<p class="intro">每天早晨，我从深圳公寓的24楼坐电梯下去。每隔几层它就猛地刹一下，推背感很像坐了一辆混动网约车，混着司机的头油味儿。两种我都晕。早餐没吃，已经有点想吐。</p>
 </div>
 <div class="brake">— 身体总比脑子先提离职。</div>
 </section>
@@ -50,8 +56,8 @@
 <em>美好生活</em>
 </h2>
 <div class="body">
-<p>写字楼连廊里，老人用我听不懂的方言追着孩子喊。这里不是公园，却成了他们每天的公园。我猜，他们是哪位百万年薪研发兄弟的父母。</p>
-<div class="aside">他加班到半夜，为全家换取更好的生活。更好的生活，每天在楼下等他。</div>
+<p>写字楼连廊里，老人用我听不懂的方言追着孩子喊。我一开始只觉得吵，甚至想，他们为什么不去公园。后来又觉得这想法挺何不食肉糜的。我不知道他们住在哪里，白天能去哪里。也许这条连廊，就是附近最方便的一块空地。</p>
+<div class="aside">我猜，他们是哪位百万年薪研发兄弟的父母。他熬夜加班，想给一家人更好的生活。至于更好的生活具体长什么样，大家可能都还没空商量。</div>
 </div>
 </div>
 </section>
@@ -66,13 +72,18 @@
 </div>
 </div>
 </section>
+<section class="floor money">
+<div class="floor-no">为什么来</div>
+<div class="text"><h2>我不是被发配到深圳的。<br>我是自己来的。</h2><div class="body"><p>我离开媒体去读MBA，又进了出海民企。说白了，我也想离钱近一点，想要更高的职位，想让别人觉得我混得不错。总不能一边嫌弃世俗成功，一边又天天偷偷看同龄人赚了多少钱。</p><div class="aside">所以这不是一个误入流水线的文艺青年故事。门是我自己推开的。只是进去以后，我发现里面卖的东西和广告上不太一样。</div></div></div>
+</section>
 <section class="floor border">
 <div class="floor-no">海关</div>
+<div class="border-axis"><span>这一边</span><i></i><span>那一边</span></div>
 <div class="text">
-<h2>有个周末，<br>我去了趟香港。</h2>
+<h2>香港只隔了<br>一道关。</h2>
 <div class="body">
-<p>也没发生什么大事。只是过了关，我突然发现街上的年轻人会健身，衣服似乎认识熨斗，脸上还有一点年轻人的精气神。原来我没有失去感受这些东西的能力。我只是在深圳渐渐懒得感受了。</p>
-<div class="aside">晚上再过关回来，地铁门还没关好，那种熟悉的疲惫已经重新盖在所有人脸上。香港和深圳只隔一道关。我在两边，倒像是两个人。</div>
+<p>周末去了趟香港。过关以后，我突然又想打扮了，也开始注意街上的年轻人穿什么、有没有健身、脸上还有没有一点精神。我知道拿周末的香港和工作日的深圳比很作弊，谁过周末都比上班好看。</p>
+<div class="aside">晚上回来，海关一过，地铁里又是熟悉的疲惫。香港和深圳只隔一道关，我的状态好像也只隔一道关。这至少说明，我还没有彻底坏掉。</div>
 </div>
 </div>
 </section>
@@ -81,33 +92,37 @@
 <div class="text">
 <h2>人类<br>消消乐</h2>
 <div class="body">
-<p>夜里十一点，地铁上的男人像一局消消乐：眼镜、手机、微胖，以及加班留下的淡淡油光。任选三个，本应消除。遗憾的是，我们谁也没能通关。</p>
+<p>夜里十一点，地铁上的男人像一局消消乐：眼镜、手机、微胖，以及加班留下的淡淡油光。我知道这样形容很刻薄。我当时大概也没好看到哪里去：穿着洞洞鞋，抱着手机，一脸谁也别来跟我说话。任选三个，本应消除。遗憾的是，我们谁也没能通关。</p>
 <div class="aside">也许他们和我一样，正在网上吐槽自己看不惯的异性。</div>
 <div class="men">
-<span>
-</span>
-<span>
-</span>
-<span>
-</span>
-<span>
-</span>
-<span>
-</span>
+<button type="button">未读消息 99+<small>工作群仍在更新</small></button>
+<button type="button">电量 09%<small>本人情况相近</small></button>
+<button type="button">外卖已送达<small>已在门口等候 42 分钟</small></button>
+<button type="button">明早 09:00<small>会议邀请已接受</small></button>
+<button type="button">今日步数 2,418<small>主要往返于厕所</small></button>
+<button type="button">短视频 3h 17m<small>本人称这是休息</small></button>
 </div>
-<div class="men-note">五条人生加载中 · 暂未发现出口</div>
+<div class="match-result" id="matchResult">请选择三块进行消除</div>
 </div>
 </div>
+</section>
+<section class="floor trial">
+<div class="floor-no">内部法庭</div>
+<div class="text"><h2>别人都可以。<br>为什么你不行？</h2><div class="body"><p>我每天真正对付的也不全是工作，而是脑子里的审判：是不是太picky，是不是能力普通要求还多，是不是既要钱又要自由，还希望别人羡慕我。这个法庭二十四小时开庭，法官、检察官和被告都是我。</p><div class="aside">最好笑的是，我明明最讨厌给领导汇报，却一直在给脑子里的领导写汇报材料。</div></div></div>
 </section>
 <section class="floor paris">
 <div class="floor-no">记忆</div>
 <div class="text">
 <h2>Bonsoir.</h2>
 <div class="body">
-<p>我想念巴黎黄昏里和邻居说bonsoir的自己。不是因为巴黎道德更高尚，而是那个我还有余裕察觉天色，也还有足够完整的自我，被一句问候重新认出来。</p>
-<div class="aside">在巴黎，黄昏会到来。在深圳，工作只是变成了夜班。</div>
+<p>从香港回来，我又想起巴黎黄昏里和邻居说bonsoir的自己。我也知道这更不公平。那时候我在读书，不需要靠巴黎赚钱。拿一段学生生活和一份深圳的工作比，本来就有点作弊。</p>
+<div class="aside">可我怀念的可能也不全是巴黎。我怀念那个还有力气看天色、和邻居说话、对明天去哪儿有点好奇的自己。</div>
 </div>
 </div>
+</section>
+<section class="floor reporter-screen">
+<div class="floor-no">还剩什么</div>
+<div class="text"><h2>媒体老师没了。<br>记者还在。</h2><div class="body"><p>我后悔过离开媒体。不是只因为那个身份听起来体面，而是我确实喜欢出去找新闻，喜欢和人聊到一些更human的地方，也喜欢顺着一条线索往下挖，看看漂亮话后面到底藏着什么。</p><div class="aside">现在很多人把话筒举得很漂亮，但话筒后面没有问题。我怀念的也许不是媒体，是那个还相信问题值得被问出来的自己。</div></div></div>
 </section>
 <section class="floor call">
 <div class="floor-no">耗尽</div>
@@ -134,13 +149,14 @@
 <h2>我想赚钱。<br>也想要<br>
 <i>生活。</i>
 </h2>
-<p>这不是关于能不能吃苦的辩论。我想知道：当所有人都用健康、时间和感受力交换“更好的生活”，究竟要到哪一层，我们才肯承认自己坐错了电梯？</p>
+<p>我还是想赚钱。而且不是那种嘴上说钱不重要的想赚钱。我想有一天可以选择不做班，选择住在哪个国家，也可以决定要不要结婚生孩子，而不是因为没钱，每一项都只能服从现实。可如果赚钱的过程先把那个会写、会聊、会对人好奇的我弄没了，我最后买回来的自由，到底准备给谁用？</p>
 </div>
 </section>
 </main>
 <script>
-const levels=['24','G','B1','HK','23:06','PARIS','—'];const sections=[...document.querySelectorAll('section')],level=document.querySelector('#level'),track=document.querySelector('.track');addEventListener('scroll',()=>{const p=scrollY/(document.body.scrollHeight-innerHeight);track.style.height=p*100+'%';let best=0,dist=1e9;sections.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top-innerHeight*.35);if(d<dist){dist=d;best=i}});level.textContent=levels[Math.min(best,levels.length-1)]});
-const canvas=document.querySelector('#scratchCanvas'),wrap=document.querySelector('#scratchWrap'),hint=document.querySelector('#scratchHint'),ctx=canvas.getContext('2d');let rubbing=false,revealed=false;function prepareInk(){const r=wrap.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#111315';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='rgba(184,255,50,.32)';for(let y=8;y<r.height;y+=14)for(let x=8;x<r.width;x+=14){const shift=(y/14)%2?5:0;ctx.beginPath();ctx.arc(x+shift,y,1.5,0,Math.PI*2);ctx.fill()}}function erase(e){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;ctx.globalCompositeOperation='destination-out';const g=ctx.createRadialGradient(x,y,6,x,y,58);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.72,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,60,0,Math.PI*2);ctx.fill();if(!revealed){revealed=true;hint.classList.add('gone')}}canvas.addEventListener('pointerdown',e=>{rubbing=true;canvas.setPointerCapture(e.pointerId);erase(e)});canvas.addEventListener('pointermove',e=>{if(rubbing)erase(e)});canvas.addEventListener('pointerup',()=>rubbing=false);canvas.addEventListener('pointercancel',()=>rubbing=false);addEventListener('resize',prepareInk);prepareInk();
+const levels=['24','G','B1','¥','HK','23:06','?','PARIS','REC','—','—','—'];const sections=[...document.querySelectorAll('section')],level=document.querySelector('#level'),counter=document.querySelector('.counter'),track=document.querySelector('.track');sections.forEach(s=>s.querySelector('.text,.title,.scratch-wrap')?.classList.add('chapter-in'));const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{entry.target.classList.toggle('visible',entry.isIntersecting);entry.target.closest('section')?.classList.toggle('scene-active',entry.isIntersecting)}),{threshold:.18});document.querySelectorAll('.chapter-in').forEach(el=>revealObserver.observe(el));addEventListener('scroll',()=>{const p=scrollY/(document.body.scrollHeight-innerHeight);track.style.height=p*100+'%';let best=0,dist=1e9;sections.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top-innerHeight*.35);if(d<dist){dist=d;best=i}});const active=sections[best];level.textContent=levels[Math.min(best,levels.length-1)];counter.classList.toggle('dark',active.matches('.corridor,.money,.reporter-screen,.reveal,.end'))});
+const matchButtons=[...document.querySelectorAll('.men button')],matchResult=document.querySelector('#matchResult');let chosen=0;matchButtons.forEach(button=>button.addEventListener('click',()=>{if(button.classList.contains('chosen')){button.classList.remove('chosen');chosen--}else if(chosen<3){button.classList.add('chosen');chosen++}matchResult.textContent=chosen<3?`还差 ${3-chosen} 块`:'消除失败：明天还要上班。';matchButtons.forEach(b=>b.style.opacity=chosen===3&&!b.classList.contains('chosen')?'.28':'1')}));
+const canvas=document.querySelector('#scratchCanvas'),wrap=document.querySelector('#scratchWrap'),hint=document.querySelector('#scratchHint'),ctx=canvas.getContext('2d');let rubbing=false,revealed=false;function prepareInk(){const r=wrap.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#111315';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='rgba(184,255,50,.32)';for(let y=8;y<r.height;y+=14)for(let x=8;x<r.width;x+=14){const shift=(y/14)%2?5:0;ctx.beginPath();ctx.arc(x+shift,y,1.5,0,Math.PI*2);ctx.fill()}}function erase(e){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;ctx.globalCompositeOperation='destination-out';const g=ctx.createRadialGradient(x,y,6,x,y,58);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.72,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,60,0,Math.PI*2);ctx.fill();if(!revealed){revealed=true;hint.classList.add('gone')}}canvas.addEventListener('pointerdown',e=>{rubbing=true;canvas.setPointerCapture(e.pointerId);erase(e)});canvas.addEventListener('pointermove',e=>{if(rubbing)erase(e)});canvas.addEventListener('pointerup',()=>rubbing=false);canvas.addEventListener('pointercancel',()=>rubbing=false);prepareInk();
 </script>
 </body>
 </html>
