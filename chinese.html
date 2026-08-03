@@ -82,7 +82,7 @@
 <h2>人类<br>消消乐</h2>
 <div class="body">
 <p>夜里十一点，地铁上的男人像一局消消乐：眼镜、手机、微胖，以及加班留下的淡淡油光。任选三个，本应消除。遗憾的是，我们谁也没能通关。</p>
-<div class="aside">也许他们上网吐槽看不惯的女人。我上网吐槽他们。爱情没有消失，只是进化成了双向嫌弃。</div>
+<div class="aside">也许他们和我一样，正在网上吐槽自己看不惯的异性。</div>
 <div class="men">
 <span>
 </span>
@@ -124,7 +124,7 @@
 <section class="reveal">
 <div class="reveal-head">隐形墨水 / 07</div>
 <div class="scratch-wrap" id="scratchWrap">
-<div class="secret">我不是害怕吃苦。<br>我害怕吃完所有的苦，<br><strong>最后只学会了忍耐。</strong></div>
+<div class="secret">我一直怀疑自己不能吃苦。<br>后来发现我也能。<br><br>只是我一边吃，<br>一边忍不住研究这苦到底是谁做的，<br>为什么卖这么贵，<br><strong>以及大家为什么还在排队。</strong></div>
 <canvas id="scratchCanvas"></canvas>
 <div class="instruction" id="scratchHint">用手指或鼠标擦开表面 ↗</div>
 </div>
@@ -140,7 +140,6 @@
 </main>
 <script>
 const levels=['24','G','B1','HK','23:06','PARIS','—'];const sections=[...document.querySelectorAll('section')],level=document.querySelector('#level'),track=document.querySelector('.track');addEventListener('scroll',()=>{const p=scrollY/(document.body.scrollHeight-innerHeight);track.style.height=p*100+'%';let best=0,dist=1e9;sections.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top-innerHeight*.35);if(d<dist){dist=d;best=i}});level.textContent=levels[Math.min(best,levels.length-1)]});
-const words=`每天早晨，我从深圳公寓的二十四楼往下。电梯每隔几层刹一次车。胃继续下坠，人停在半空。第一天，我打扮得仿佛北京CBD还在暗中考核我。一个星期后，我穿上了洞洞鞋。深圳通过鞋类击败了我。夜里十一点，地铁上的男人像一局消消乐：眼镜、手机、微胖，以及加班留下的淡淡油光。任选三个，本应消除。遗憾的是，我们谁也没能通关。也许他们上网吐槽看不惯的女人，我上网吐槽他们。爱情没有消失，只是进化成了双向嫌弃。我想念巴黎黄昏里和邻居说bonsoir的自己。在巴黎，黄昏会到来。在深圳，工作只是变成了夜班。晚上八点，电梯里的女生接老板电话：王总，真的现在就要吗？我们都在同一个铁盒子里下降。只是有些人已经学会了感觉不到刹车。我想赚钱，也想要生活。究竟要到哪一层，我们才肯承认自己坐错了电梯？`;
 const canvas=document.querySelector('#scratchCanvas'),wrap=document.querySelector('#scratchWrap'),hint=document.querySelector('#scratchHint'),ctx=canvas.getContext('2d');let rubbing=false,revealed=false;function prepareInk(){const r=wrap.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#111315';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='rgba(184,255,50,.32)';for(let y=8;y<r.height;y+=14)for(let x=8;x<r.width;x+=14){const shift=(y/14)%2?5:0;ctx.beginPath();ctx.arc(x+shift,y,1.5,0,Math.PI*2);ctx.fill()}}function erase(e){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;ctx.globalCompositeOperation='destination-out';const g=ctx.createRadialGradient(x,y,6,x,y,58);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.72,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,60,0,Math.PI*2);ctx.fill();if(!revealed){revealed=true;hint.classList.add('gone')}}canvas.addEventListener('pointerdown',e=>{rubbing=true;canvas.setPointerCapture(e.pointerId);erase(e)});canvas.addEventListener('pointermove',e=>{if(rubbing)erase(e)});canvas.addEventListener('pointerup',()=>rubbing=false);canvas.addEventListener('pointercancel',()=>rubbing=false);addEventListener('resize',prepareInk);prepareInk();
 </script>
 </body>
