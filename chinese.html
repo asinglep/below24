@@ -27,6 +27,9 @@
 </head>
 <body>
 <style>
+@media(max-width:720px){.floor{padding:5.5vh 6.5vw 4vh!important;align-content:center}.floor-no{margin-bottom:10px!important}.floor-no:after{display:none!important}.text h2{font-size:clamp(52px,17vw,74px)!important;line-height:.92!important;margin:0 0 13px!important}.body{margin:0!important;gap:10px!important}.body p{font-size:16px!important;line-height:1.62!important}.aside{font-size:16px!important;line-height:1.48!important}.wardrobe{padding:4.5vh 6.5vw 3.5vh!important}.wardrobe .text h2{font-size:56px!important;margin-bottom:10px!important}.wardrobe-morph{margin-top:11px!important;padding:10px 12px!important}.wardrobe-morph input{margin:12px 0 5px!important}.corridor,.dispatch,.border,.call,.metro{padding-top:5.5vh!important}.dispatch-ticker{height:46px!important}.dispatch{padding-top:8vh!important}.order-card{margin-top:10px!important;padding:13px!important}.boss-phone{margin:3vh 0 2vh!important;min-height:250px!important;padding-top:28px!important}.boss-avatar{width:78px!important;height:78px!important}.call .text h2,.call .quote{font-size:52px!important}.metro-game{padding:4.5vh 4vw 2.5vh!important}.metro-game .floor-no{margin-bottom:4px!important}.metro-game .text h2{font-size:52px!important;margin-bottom:7px!important}.game-body .interaction-cue{margin-bottom:5px!important}.metro-game .men{gap:5px!important}.metro-game .men button,.metro-game .men button:nth-child(9){min-height:101px!important;padding:7px 6px!important;font-size:11px!important}.metro-game .men button small{font-size:7px!important;margin-top:5px!important}.metro-game .match-result{margin-top:5px!important}.exit-gift.show{min-height:56px!important}.paris .text h2{font-size:64px!important}.reveal{padding:5vh 5vw!important}.reveal-head{margin-bottom:5px}.scratch-wrap{min-height:72vh!important}.end{padding:5vh 6.5vw!important}.end h2{font-size:54px!important}.end p{font-size:16px!important;line-height:1.58!important;margin-top:12px!important}.end .station-sign{margin-top:12px!important}}
+</style>
+<style>
 .end .station-sign{width:260px;margin:24px 0 0 auto;padding:9px 13px 8px;border-width:2px;border-radius:8px;box-shadow:4px 4px 0 #111;opacity:.86}.end .station-sign:before{right:10px;top:8px;width:22px;height:22px;font-size:10px}.end .station-sign small{font-size:7px}.end .station-sign em{margin-top:3px;font-size:7px}.end .flip-board{width:205px;height:31px;margin-top:4px}.end .flip-board span{font-size:27px;letter-spacing:-.04em}.end h2{font-size:clamp(52px,8vw,118px)!important}.end p{max-width:650px}@media(max-width:720px){.end .station-sign{width:220px;margin-top:18px;padding:8px 11px}.end .flip-board{width:172px;height:29px}.end .flip-board span{font-size:24px}.end h2{font-size:43px!important}}
 </style>
 <style>
@@ -139,7 +142,6 @@
 </section>
 <section class="floor call">
 <div class="floor-no">20:03</div>
-<div class="boss-phone"><div class="boss-avatar"><span class="side-hair"></span><span class="glasses"></span><span class="boss-mouth"></span></div><div class="boss-name">王总来电中…</div><div class="boss-lines"><i>现在就要</i><i>尽快</i><i>辛苦一下</i></div><button type="button" class="answer-boss">接听 <b>↗</b></button></div>
 <div class="text">
 <p class="quote">“王总，<br>
 <span>真的现在</span>
@@ -149,6 +151,7 @@
 <div class="aside">电梯继续往下。</div>
 </div>
 </div>
+<div class="boss-phone"><div class="boss-avatar"><span class="side-hair"></span><span class="glasses"></span><span class="boss-mouth"></span></div><div class="boss-name">王总来电中…</div><div class="boss-lines"><i>现在就要</i><i>尽快</i><i>辛苦一下</i></div><button type="button" class="answer-boss">接听 <b>↗</b></button></div>
 </section>
 <section class="floor metro">
 <div class="floor-no">23:06</div>
@@ -219,5 +222,26 @@ const canvas=document.querySelector('#scratchCanvas'),wrap=document.querySelecto
 <script>document.querySelector('.open-doors')?.addEventListener('click',()=>{document.querySelector('#trainDoors').classList.add('open');setTimeout(()=>{const sound=document.querySelector('#metroSound');if(sound?.getAttribute('aria-pressed')==='false')sound.click()},420)});</script>
 <script>document.querySelector('.answer-boss')?.addEventListener('click',e=>{const phone=e.currentTarget.closest('.boss-phone');phone.classList.toggle('answered');e.currentTarget.firstChild.textContent=phone.classList.contains('answered')?'挂断 ':'接听 '});</script>
 <script>{const slider=document.querySelector('#dressSlider'),stage=document.querySelector('#dressState'),screen=document.querySelector('.wardrobe');slider?.addEventListener('input',()=>{const n=+slider.value;screen.style.setProperty('--dress',n+'%');stage.textContent=n<35?'妆发完整':n<70?'口红开始失联':'洞洞鞋已装备'})}</script>
+<style>
+@media(max-width:720px){
+  .dispatch{min-height:100svh!important;padding:70px 6.5vw 18px!important;align-content:center!important}
+  .dispatch .floor-no{margin:0 0 7px!important}
+  .dispatch .text h2{font-size:clamp(54px,16vw,68px)!important;line-height:.88!important;margin:0 0 9px!important}
+  .dispatch .body{gap:7px!important;margin:0!important}
+  .dispatch .body p{font-size:15.5px!important;line-height:1.52!important;margin:0!important}
+  .dispatch .aside{font-size:15px!important;line-height:1.42!important;margin:0!important}
+  .dispatch-ticker{height:48px!important;font-size:13px!important}
+  .dispatch .order-card{margin:3px 0 0!important;padding:12px 13px!important;gap:6px!important;box-shadow:5px 5px 0 #0a0b0c!important}
+  .dispatch .order-card strong{font-size:46px!important}
+  .dispatch .accept-order{min-height:45px!important;margin-top:7px!important}
+}
+</style>
+<style>
+.call .boss-phone{opacity:0;transform:translateY(24px) scale(.96)}
+.call.scene-active .boss-phone{animation:phoneAfterTitle .7s cubic-bezier(.2,.9,.2,1) .5s both}
+@keyframes phoneAfterTitle{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.call .boss-phone{opacity:1;transform:none}.call.scene-active .boss-phone{animation:none}}
+</style>
 </body>
 </html>
+
